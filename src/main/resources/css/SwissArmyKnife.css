@@ -1,0 +1,41 @@
+textarea {
+    background-color: lightyellow;
+    width: 600px;
+    height: 150px;
+    resize: auto;
+    border-width: 1px;
+}
+
+select {
+	background-color: lightyellow;
+    width: 200px;
+    height: 30px;
+}
+
+.aui-date-picker {
+    background-color: lightyellow;
+    width: 200px;
+    height: 30px;
+    border-width: 1px;
+}
+
+#issuekey {
+	font-weight: bold; 
+	border: none; 
+	text-align: center;
+}
+
+#issuestatus {
+	font-weight: bold; 
+	border: none; 
+	text-align: center;
+	background-color: transparent;
+}
+
+#owner {
+	border: none;
+}
+
+#title {
+	border: none;
+}

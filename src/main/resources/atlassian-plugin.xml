@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    <param name="plugin-icon">images/pluginIcon.png</param>
+    <param name="plugin-logo">images/pluginLogo.png</param>
+  </plugin-info>
+
+  <!-- add our i18n resource -->
+  <!-- <resource type="i18n" name="i18n" location="swissarmyknife"/> -->
+  <!-- add our web resources -->
+
+  <web-resource key="swiss-army-knife-web-resources" name="Swiss Army Knife Web Resources">
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+    <dependency>com.atlassian.auiplugin:aui-flag</dependency>
+    <resource type="download" name="SwissArmyKnife.css" location="/css/SwissArmyKnife.css"/>
+    <resource type="download" name="SwissArmyKnife.js" location="/js/SwissArmyKnife.js"/>
+    <resource type="download" name="images/" location="/images"/>
+    <resource type="velocity" name="CharterForm" location="/templates/CharterForm.vm"/>
+    <resource type="velocity" name="JiraReportForm" location="/templates/JiraReportForm.vm"/>
+    <context>SwissArmyKnife</context>
+  </web-resource>
+  
+  <rest name="JIRA Request REST Endpoint" key="jira-rest-request" path="/jirarequest" version="1.0">
+        <description>Send a REST request to JIRA</description>
+  </rest>
+  
+  <xhtml-macro name="Charter Form" class="com.trustvesta.plugins.macro.CharterForm" key="charter-form">
+    <description>Charter Form Macro</description>
+    <category name="admin"/>
+    <parameters>
+    </parameters>
+  </xhtml-macro>
+  
+  <xhtml-macro name="JIRA Report" class="com.trustvesta.plugins.macro.JiraReport" key="jira-report">
+    <description>JIRA Report Macro</description>
+    <category name="admin"/>
+    <parameters>
+    </parameters>
+  </xhtml-macro>  
+  
+</atlassian-plugin>

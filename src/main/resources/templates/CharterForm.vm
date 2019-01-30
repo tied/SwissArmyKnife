@@ -1,0 +1,161 @@
+#requireResource("com.trustvesta.plugins.SwissArmyKnife:swiss-army-knife-web-resources")
+#requireResource("confluence.web.resources:ajs")
+
+## Dark metadata
+<input id="issuetype" type="text" value="Initiative" style="visibility:hidden;">
+
+<input id="updateinitiative" class="aui" type="button" value="Update Initiative" onclick="updateInitiative()" >
+
+<H3>Created Date</H3>
+<input class="aui-date-picker" id="submitdate" type="date" max="2020-01-01" min="2017-01-01" />
+
+<H3>Initiative</H3>
+<a id="issuelink" target="_blank">
+	<input id="issuekey" value="" readonly />
+	<input id="issuestatus" value="" readonly />
+</a>
+
+<H3>Initiative Owner</H3>
+<input id="owner" value="$CharterFormMacroObject.getCreator()" />
+
+<H3>Initiative Title</H3>
+<input id="title" type="text" value="$CharterFormMacroObject.getTitle()" />
+
+<H3>Customer/System</H3>
+<select class="select" id="customer" name="customer">
+	<option value="None">None</option>
+	<option value="ATT Long Distance">ATT Long Distance</option>
+	<option value="ClaroPE">ClaroPE</option>
+	<option value="DevOps">DevOps</option>
+	<option value="EE-Orange">EE-Orange</option>
+</select>
+
+<H3>Portfolio</H3>
+<select class="select" id="project" name="project">
+	<option value="TEST">Test</option>
+	<option value="SBP2">Sandbox_P2</option>
+	<option value="VS">vSafe</option>
+	<option value="EA">Enterprise Architecture</option>
+	<option value="PAY">Payments</option>
+</select>
+
+<H3>Executive Summary</H3>
+<textarea class"textarea" id="summary" name="summary" placeholder="Enter executive summary here"></textarea>
+
+<H3>Customer Requested Deployment Date</H3>
+<input class="aui-date-picker" id="deliverydate" type="date" max="2020-01-01" min="2017-01-01" />
+
+<H3>Issue Statement</H3>
+<textarea class"textarea" id="statement" name="statement" placeholder="Enter issue statement here"></textarea>
+
+<H3>Anticipated Outcome</H3>
+<textarea class"textarea" id="outcome" name="outcome" placeholder="Enter anticipated outcome here"></textarea>
+
+<H3>Justification</H3>
+<textarea class"textarea" id="justification" name="justification" placeholder="Enter justification here"></textarea>
+
+<H3>Net Revenue Opportunity</H3>
+<textarea class"textarea" id="revenue" name="revenue" placeholder="Enter net revenue opportunity here"></textarea>
+
+<H3>Opportunity Driver</H3>
+<select class="select" id="opportunity" name="opportunity">
+	<option value="Acquisition">Acquisition</option>
+	<option value="Retention">Retention</option>
+	<option value="Time and Material">Time and Material</option>
+	<option value="Maintenance">Maintenance</option>
+	<option value="Strategic">Strategic</option>
+</select>
+
+<H3>Expense (CapEx/OpEx)</H3>
+<textarea class"textarea" id="expense" name="expense" placeholder="Enter expense here"></textarea>
+
+<div id="extendedtext" style="visibility:hidden;">
+	<H3>Introduction</H3>
+	<textarea class"textarea" id="introduction" name="introduction" placeholder="Enter introduction here"></textarea>
+	
+	<H3>Intended Audience</H3>
+	<textarea class"textarea" id="audience" name="audience" placeholder="Enter intended audience here"></textarea>
+	
+	<H3>Project Background</H3>
+	<textarea class"textarea" id="background" name="background" placeholder="Enter project background here"></textarea>
+	
+	<H3>Business Objective</H3>
+	<textarea class"textarea" id="objective" name="objective" placeholder="Enter business objective here"></textarea>
+	
+	<H3>Stakeholders</H3>
+	<textarea class"textarea" id="stakeholders" name="stakeholders" placeholder="Enter stakeholders here"></textarea>
+	
+	<H3>Initiative Assumptions</H3>
+	<textarea class"textarea" id="assumptions" name="assumptions" placeholder="Enter initiative assumptions here"></textarea>
+	
+	<H3>Out of Scope Statement</H3>
+	<textarea class"textarea" id="outofscope" name="outofscope" placeholder="Enter out of scope statement here"></textarea>
+	
+	<H3>Dependencies</H3>
+	<textarea class"textarea" id="dependencies" name="dependencies" placeholder="Enter dependencies here"></textarea>
+	
+	<H3>Technology Impact/Requirements</H3>
+	<textarea class"textarea" id="techimpact" name="techimpact" placeholder="Enter technology impact here"></textarea>
+	
+	<H3>Operational Impact/Requirements</H3>
+	<textarea class"textarea" id="opimpact" name="opimpact" placeholder="Enter operational impact here"></textarea>
+	
+	<H3>Initiative Overview/Requirements</H3>
+	<textarea class"textarea" id="overview" name="overview" placeholder="Enter initiative overview here"></textarea>
+	
+	<H3>Initiative Description/Requirements</H3>
+	<textarea class"textarea" id="description" name="description" placeholder="Enter initiative description here"></textarea>
+	
+	<H3>Initiative Performance</H3>
+	<textarea class"textarea" id="performance" name="performance" placeholder="Enter initiative performance here"></textarea>
+	
+	<H3>Initiative Constraints</H3>
+	<textarea class"textarea" id="constraints" name="constraints" placeholder="Enter initiative contraints here"></textarea>
+	
+	<H3>Major Project Milestones</H3>
+	<textarea class"textarea" id="milestones" name="milestones" placeholder="Enter major project milestones here"></textarea>
+	
+	<H3>Alternative Analysis</H3>
+	<textarea class"textarea" id="analysis" name="analysis" placeholder="Enter alternative analysis here"></textarea>
+	
+	<H3>Risks</H3>
+	<textarea class"textarea" id="risks" name="risks" placeholder="Enter risks here"></textarea>
+	
+	<H3>Payment Impact</H3>
+	<textarea class"textarea" id="payimpact" name="payimpact" placeholder="Enter payment impact here"></textarea>
+	
+	<H3>Risk Management Team Impact</H3>
+	<textarea class"textarea" id="rmimpact" name="rmimpact" placeholder="Enter risk management team impact here"></textarea>
+	
+	<H3>Finance Team Impact</H3>
+	<textarea class"textarea" id="finimpact" name="finimpact" placeholder="Enter finance team impact here"></textarea>
+	
+	<H3>Info Security Team Impact</H3>
+	<textarea class"textarea" id="isimpact" name="isimpact" placeholder="Enter info security team impact here"></textarea>
+	
+	<H3>Enterprise Architect Team Impact</H3>
+	<textarea class"textarea" id="eaimpact" name="eaimpact" placeholder="Enter enterprise architect team impact here"></textarea>
+	
+	<H3>Non-Functional Requirements</H3>
+	<textarea class"textarea" id="nfrequirements" name="nfrequirements" placeholder="Enter non-functional requirements here"></textarea>
+	
+	<H3>Initiative Approvals</H3>
+	<H2>Account Management</H2>
+	<H2>Engineering</H2>
+	<H2>Security</H2>
+	<H2>Finance</H2>
+	<H2>Risk</H2>
+	<H2>Payments</H2>
+	
+	<H3>Dev Estimate</H3>
+	<textarea class"textarea" id="devestimate" name="devestimate" placeholder="Enter dev estimate here"></textarea>
+	
+	<H3>Other Estimated Cost (Hardware, etc)</H3>
+	<textarea class"textarea" id="otherestimate" name="otherestimate" placeholder="Enter other estimated cost here"></textarea>
+	
+	<H3>Approval Flag</H3>
+	<textarea class"textarea" id="approval" name="approval" placeholder="Enter approval flag here"></textarea>
+	
+	<H3>Score/Priority</H3>
+	<textarea class"textarea" id="score" name="score" placeholder="Enter score/priority here"></textarea>
+</div>

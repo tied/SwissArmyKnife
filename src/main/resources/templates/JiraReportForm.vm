@@ -1,0 +1,45 @@
+## Dependent resources needed
+#requireResource("com.trustvesta.plugins.SwissArmyKnife:swiss-army-knife-web-resources")
+#requireResource("confluence.web.resources:ajs")
+#requireResource("com.atlassian.auiplugin:aui-spinner")
+
+##  HTML form to provide user input values and a submit button.  
+##  On submit, jiraReport() is called.
+
+<form name="jirareportform" action="javascript:jiraReport(startdate.value, enddate.value)">
+    <table width="450px">
+    <tr>
+        <td colspan="2" style="text-align:center;">
+            <H3>JQL Query Parameters</H3>
+        </td>
+    </tr>
+    
+    <tr>
+        <td valign="top">
+	        <label for="startdate">Start Date</label>
+	    </td>
+	    <td valign="top"> 
+	         <input class="aui-date-picker" style="text-align:center;" type="date" name="startdate" id="startdate">
+	    </td>
+	</tr>
+	
+	<tr>
+	    <td valign="top">
+	        <label for="enddate">End Date</label>
+	    </td>
+	    <td valign="top"> 
+	        <input class="aui-date-picker" style="text-align:center;" type="date" name="enddate" id="enddate">
+	    </td>
+	</tr>
+	
+	<tr>
+	    <td colspan="2" style="text-align:center;">
+	        <input class="aui" type="submit" value="Submit">
+	    </td>
+	    <td>
+	    	<div class="button-spinner"></div>
+	    </td>
+	</tr>
+	
+	</table>
+</form>
